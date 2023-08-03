@@ -66,7 +66,7 @@ export default function Home() {
                 href=""
                 className="text-blue-300 hover:underline underline-offset-2"
               >
-                Binary 1's compliment
+                Binary 1&apos;s compliment
               </Link>
               <Link
                 href=""
