@@ -51,7 +51,7 @@ const BinaryCalculator = ({ title, toolInUse }) => {
     Object.keys(obj).find((key) => obj[key] === value);
 
   const changeRoute = (operator) => {
-    const newRoute = `./tools/binary-${findKeyByValue(operatorDict, operator)}`;
+    const newRoute = `/tools/binary-${findKeyByValue(operatorDict, operator)}`;
     router.push(newRoute);
   };
 
