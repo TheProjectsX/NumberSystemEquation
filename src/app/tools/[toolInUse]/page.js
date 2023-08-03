@@ -6,7 +6,7 @@ import BinaryCalculator from "@/components/BinaryCalculator";
 import BinaryCompliment from "@/components/BinaryComplient";
 import BinaryConverter from "@/components/BinaryConverter";
 
-const page = ({ params, searchParams }) => {
+const page = ({ params }) => {
   const binaryConvertions = [
     "decimal-to-bcd",
     "bcd-to-decimal",
@@ -17,18 +17,20 @@ const page = ({ params, searchParams }) => {
     "binary-to-hamming-code",
     "hamming-code-to-binary",
   ];
+  const binaryMath = ["binary-add", "binary-sub", "binary-multi", "binary-div"];
+  const binaryCompliment = [
+    "binary-to-1s-compliment",
+    "binary-to-2s-compliment",
+  ];
+
   return typeof MetaData[params.toolInUse] !== "undefined" ? (
-    params.toolInUse === "binary-math" ? (
+    binaryMath.includes(params.toolInUse) ? (
       <BinaryCalculator
         toolInUse={params.toolInUse}
         title={MetaData[params.toolInUse].title}
-        methodForm={searchParams}
       />
-    ) : params.toolInUse === "binary-to-compliment" ? (
-      <BinaryCompliment
-        toolInUse={params.toolInUse}
-        methodForm={searchParams}
-      />
+    ) : binaryCompliment.includes(params.toolInUse) ? (
+      <BinaryCompliment toolInUse={params.toolInUse} />
     ) : binaryConvertions.includes(params.toolInUse) ? (
       <BinaryConverter toolInUse={params.toolInUse} />
     ) : (
@@ -43,4 +45,10 @@ export default page;
 
 export const generateMetadata = ({ params }) => {
   return MetaData[params.toolInUse];
+};
+
+export const generateStaticParams = () => {
+  return Object.keys(MetaData).map((item) => ({
+    toolInUse: item,
+  }));
 };
