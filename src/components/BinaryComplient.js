@@ -18,12 +18,12 @@ const BinaryCompliment = ({ toolInUse, methodForm }) => {
 
   const router = useRouter();
   const changeQuery = (nextOperator) => {
-    const oldRoute = `/tools/${toolInUse}${
+    const oldRoute = `./tools/${toolInUse}${
       typeof operatorDict[methodForm.method] == "string"
         ? `?method=${methodForm.method}`
         : ""
     }`;
-    const newRoute = `/tools/${toolInUse}?method=${nextOperator}`;
+    const newRoute = `./tools/${toolInUse}?method=${nextOperator}`;
     router.push(newRoute, oldRoute, {
       shallow: true,
     });

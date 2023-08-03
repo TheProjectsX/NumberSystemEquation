@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { ConverterFuncs } from "@/data/converterFuncs";
 import { useRouter } from "next/navigation";
 
-const Calculator = ({ title, toolInUse, methodForm }) => {
+const BinaryCalculator = ({ title, toolInUse, methodForm }) => {
   const [userInput01, setUserInput01] = useState("");
   const [userInput02, setUserInput02] = useState("");
 
@@ -49,12 +49,12 @@ const Calculator = ({ title, toolInUse, methodForm }) => {
     Object.keys(obj).find((key) => obj[key] === value);
 
   const changeQuery = (nextOperator) => {
-    const oldRoute = `/tools/${toolInUse}${
+    const oldRoute = `./tools/${toolInUse}${
       typeof operatorDict[methodForm.eqn] == "string"
         ? `?eqn=${methodForm.eqn}`
         : ""
     }`;
-    const newRoute = `/tools/${toolInUse}?eqn=${findKeyByValue(
+    const newRoute = `./tools/${toolInUse}?eqn=${findKeyByValue(
       operatorDict,
       nextOperator
     )}`;
@@ -162,4 +162,4 @@ const Calculator = ({ title, toolInUse, methodForm }) => {
   );
 };
 
-export default Calculator;
+export default BinaryCalculator;

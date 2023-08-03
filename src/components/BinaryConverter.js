@@ -31,7 +31,7 @@ const BinaryConverter = ({ toolInUse }) => {
   // Change Route when Dropdown changed
   const router = useRouter();
   useEffect(() => {
-    const nextRoute = `${convFrom
+    const nextRoute = `./${convFrom
       .replaceAll(" ", "-")
       .toLowerCase()}-to-${convTo.replaceAll(" ", "-").toLowerCase()}`;
     router.push(nextRoute);

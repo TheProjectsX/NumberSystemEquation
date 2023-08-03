@@ -15,7 +15,7 @@ const Converter = ({ toolInUse }) => {
   // Change Route when Dropdown changed
   const router = useRouter();
   useEffect(() => {
-    const nextRoute = `${convFrom.toLowerCase()}-to-${convTo.toLowerCase()}`;
+    const nextRoute = `./${convFrom.toLowerCase()}-to-${convTo.toLowerCase()}`;
     console.log(nextRoute);
     router.push(nextRoute);
   }, [convFrom, convTo]);

@@ -5,41 +5,41 @@ export const RoutesData = [
       [
         {
           title: "Binary to Text",
-          path: "/tools/binary-to-text",
+          path: "./tools/binary-to-text",
         },
         {
           title: "Text to Binary",
-          path: "/tools/text-to-binary",
+          path: "./tools/text-to-binary",
         },
       ],
       [
         {
           title: "Decimal to Text",
-          path: "/tools/decimal-to-text",
+          path: "./tools/decimal-to-text",
         },
         {
           title: "Text to Decimal",
-          path: "/tools/text-to-decimal",
+          path: "./tools/text-to-decimal",
         },
       ],
       [
         {
           title: "Hex to Text",
-          path: "/tools/hex-to-text",
+          path: "./tools/hex-to-text",
         },
         {
           title: "Text to Hex",
-          path: "/tools/text-to-hex",
+          path: "./tools/text-to-hex",
         },
       ],
       [
         {
           title: "Octal to Text",
-          path: "/tools/octal-to-text",
+          path: "./tools/octal-to-text",
         },
         {
           title: "Text to Octal",
-          path: "/tools/text-to-octal",
+          path: "./tools/text-to-octal",
         },
       ],
     ],
@@ -50,57 +50,57 @@ export const RoutesData = [
       [
         {
           title: "Binary to Decimal",
-          path: "/tools/binary-to-decimal",
+          path: "./tools/binary-to-decimal",
         },
         {
           title: "Binary to Hex",
-          path: "/tools/binary-to-hex",
+          path: "./tools/binary-to-hex",
         },
         {
           title: "Binary to Octal",
-          path: "/tools/binary-to-octal",
+          path: "./tools/binary-to-octal",
         },
       ],
       [
         {
           title: "Decimal to Binary",
-          path: "/tools/decimal-to-binary",
+          path: "./tools/decimal-to-binary",
         },
         {
           title: "Decimal to Hex",
-          path: "/tools/decimal-to-hex",
+          path: "./tools/decimal-to-hex",
         },
         {
           title: "Decimal to Octal",
-          path: "/tools/decimal-to-octal",
+          path: "./tools/decimal-to-octal",
         },
       ],
       [
         {
           title: "Hex to Binary",
-          path: "/tools/hex-to-binary",
+          path: "./tools/hex-to-binary",
         },
         {
           title: "Hex to Decimal",
-          path: "/tools/hex-to-decimal",
+          path: "./tools/hex-to-decimal",
         },
         {
           title: "Hex to Octal",
-          path: "/tools/hex-to-octal",
+          path: "./tools/hex-to-octal",
         },
       ],
       [
         {
           title: "Octal to Binary",
-          path: "/tools/octal-to-binary",
+          path: "./tools/octal-to-binary",
         },
         {
           title: "Octal to Decimal",
-          path: "/tools/octal-to-decimal",
+          path: "./tools/octal-to-decimal",
         },
         {
           title: "Octal to Hex",
-          path: "/tools/octal-to-hex",
+          path: "./tools/octal-to-hex",
         },
       ],
     ],
@@ -111,21 +111,21 @@ export const RoutesData = [
       [
         {
           title: "Binary Adder",
-          path: "/tools/binary-math?eqn=add",
+          path: "./tools/binary-math?eqn=add",
         },
         {
           title: "Binary Substracter",
-          path: "/tools/binary-math?eqn=sub",
+          path: "./tools/binary-math?eqn=sub",
         },
       ],
       [
         {
           title: "Binary Multiplier",
-          path: "/tools/binary-math?eqn=multi",
+          path: "./tools/binary-math?eqn=multi",
         },
         {
           title: "Binary Divider",
-          path: "/tools/binary-math?eqn=div",
+          path: "./tools/binary-math?eqn=div",
         },
       ],
     ],
@@ -136,51 +136,51 @@ export const RoutesData = [
       [
         {
           title: "Binary 1's Compliment",
-          path: "/tools/binary-to-compliment?method=1",
+          path: "./tools/binary-to-compliment?method=1",
         },
         {
           title: "Binary 2's Compliment",
-          path: "/tools/binary-to-compliment?method=2",
+          path: "./tools/binary-to-compliment?method=2",
         },
       ],
       [
         {
           title: "BCD to Decimal",
-          path: "/tools/bcd-to-decimal",
+          path: "./tools/bcd-to-decimal",
         },
         {
           title: "Decimal to BCD",
-          path: "/tools/decimal-to-bcd",
+          path: "./tools/decimal-to-bcd",
         },
       ],
       [
         {
           title: "Decimal to Excess 3",
-          path: "tools/decimal-to-excess-3",
+          path: ".tools/decimal-to-excess-3",
         },
         {
           title: "Excess 3 to Decimal",
-          path: "tools/excess-3-to-decimal",
+          path: ".tools/excess-3-to-decimal",
         },
       ],
       [
         {
           title: "Binary to Gray Code",
-          path: "tools/binary-to-gray-code",
+          path: ".tools/binary-to-gray-code",
         },
         {
           title: "Gray Code to Binary",
-          path: "tools/gray-code-to-binary",
+          path: ".tools/gray-code-to-binary",
         },
       ],
       [
         {
           title: "Binary to Hamming Code",
-          path: "tools/binary-to-hamming-code",
+          path: ".tools/binary-to-hamming-code",
         },
         {
           title: "Hamming Code to Binary",
-          path: "tools/hamming-code-to-binary",
+          path: ".tools/hamming-code-to-binary",
         },
       ],
     ],

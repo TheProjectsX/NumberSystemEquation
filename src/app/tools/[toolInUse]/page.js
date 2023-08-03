@@ -2,7 +2,7 @@ import React from "react";
 import { MetaData } from "@/data/metadata";
 import Converter from "@/components/Converter";
 import NotFound from "@/app/not-found";
-import Calculator from "@/components/Calculator";
+import BinaryCalculator from "@/components/BinaryCalculator";
 import BinaryCompliment from "@/components/BinaryComplient";
 import BinaryConverter from "@/components/BinaryConverter";
 
@@ -19,7 +19,7 @@ const page = ({ params, searchParams }) => {
   ];
   return typeof MetaData[params.toolInUse] !== "undefined" ? (
     params.toolInUse === "binary-math" ? (
-      <Calculator
+      <BinaryCalculator
         toolInUse={params.toolInUse}
         title={MetaData[params.toolInUse].title}
         methodForm={searchParams}
