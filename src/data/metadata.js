@@ -112,14 +112,34 @@ export const MetaData = {
   },
 
   // Binary Calculation
-  "binary-math": {
-    title: "Binary Equation",
+  "binary-add": {
+    title: "Binary Addition",
+    description:
+      "Binary Calculation. Binary adder, Binary substracter, Binary multiplier, Binary divider",
+  },
+  "binary-sub": {
+    title: "Binary Subtraction",
+    description:
+      "Binary Calculation. Binary adder, Binary substracter, Binary multiplier, Binary divider",
+  },
+  "binary-multi": {
+    title: "Binary Multiplication",
+    description:
+      "Binary Calculation. Binary adder, Binary substracter, Binary multiplier, Binary divider",
+  },
+  "binary-div": {
+    title: "Binary Divition",
     description:
       "Binary Calculation. Binary adder, Binary substracter, Binary multiplier, Binary divider",
   },
 
-  "binary-to-compliment": {
-    title: "Binary Compliment Calculaion",
+  "binary-to-1s-compliment": {
+    title: "Binary 1's Compliment Calculaion",
+    description:
+      "Binary Compliment Equations. Binary 1's Compliment, Binary 2's compliment",
+  },
+  "binary-to-2s-compliment": {
+    title: "Binary 2's Compliment Calculaion",
     description:
       "Binary Compliment Equations. Binary 1's Compliment, Binary 2's compliment",
   },

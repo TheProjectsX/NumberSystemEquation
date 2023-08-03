@@ -545,7 +545,7 @@ export const ConverterFuncs = {
   // Binary Calculation
   "binary-math": binaryCalculator,
 
-  "binary-to-compliment": binaryCompliment,
+  "binary-compliment": binaryCompliment,
 
   "bcd-to-decimal": bcdToDecimal,
   "decimal-to-bcd": decimalToBCD,

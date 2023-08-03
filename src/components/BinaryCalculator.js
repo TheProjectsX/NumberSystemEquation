@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import { ConverterFuncs } from "@/data/converterFuncs";
 import { useRouter } from "next/navigation";
 
-const BinaryCalculator = ({ title, toolInUse, methodForm }) => {
+const BinaryCalculator = ({ title, toolInUse }) => {
   const [userInput01, setUserInput01] = useState("");
   const [userInput02, setUserInput02] = useState("");
+  const [mathOperation, setMathOperation] = useState(toolInUse.split("-")[1]);
 
   const operatorArray = ["+", "-", "*", "/"];
 
@@ -17,7 +18,8 @@ const BinaryCalculator = ({ title, toolInUse, methodForm }) => {
     div: "/",
   };
 
-  const [operator, setOperator] = useState(operatorDict[methodForm.eqn] ?? "+");
+  const [operator, setOperator] = useState(operatorDict[mathOperation]);
+  // const method = operatorDict[mathOperation];
 
   const [outputData, setOutputData] = useState("");
   const [autoUpdate, setAutoUpdate] = useState(true);
@@ -26,7 +28,7 @@ const BinaryCalculator = ({ title, toolInUse, methodForm }) => {
     if (input01 === "" && input02 === "") return "";
     let resultValue;
     try {
-      resultValue = ConverterFuncs[toolInUse](input01, input02, method);
+      resultValue = ConverterFuncs["binary-math"](input01, input02, method);
       if (resultValue === "NaN") {
         resultValue = outputData;
       }
@@ -42,26 +44,15 @@ const BinaryCalculator = ({ title, toolInUse, methodForm }) => {
     if (autoUpdate) {
       setOutputData(calculator(userInput01, userInput02, operator));
     }
-  }, [userInput01, userInput02, operator]);
+  }, [userInput01, userInput02]);
 
   const router = useRouter();
   const findKeyByValue = (obj, value) =>
     Object.keys(obj).find((key) => obj[key] === value);
 
-  const changeQuery = (nextOperator) => {
-    const oldRoute = `./tools/${toolInUse}${
-      typeof operatorDict[methodForm.eqn] == "string"
-        ? `?eqn=${methodForm.eqn}`
-        : ""
-    }`;
-    const newRoute = `./tools/${toolInUse}?eqn=${findKeyByValue(
-      operatorDict,
-      nextOperator
-    )}`;
-
-    router.push(newRoute, oldRoute, {
-      shallow: true,
-    });
+  const changeRoute = (operator) => {
+    const newRoute = `./tools/binary-${findKeyByValue(operatorDict, operator)}`;
+    router.push(newRoute);
   };
 
   return (
@@ -82,8 +73,8 @@ const BinaryCalculator = ({ title, toolInUse, methodForm }) => {
             className="text-xl w-auto text-black px-2 py-1 rounded-md border-[2.5px] border-gray-400 cursor-pointer outline-none focus:border-[dodgerBlue] mx-auto"
             value={operator}
             onChange={(e) => {
-              changeQuery(e.target.value);
               setOperator(e.target.value);
+              changeRoute(e.target.value);
             }}
           >
             {operatorArray.map((item, index) => (

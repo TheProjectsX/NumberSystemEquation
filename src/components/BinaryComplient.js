@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { ConverterFuncs } from "@/data/converterFuncs";
 import { useRouter } from "next/navigation";
 
-const BinaryCompliment = ({ toolInUse, methodForm }) => {
+const BinaryCompliment = ({ toolInUse }) => {
   // Parse the Conv from and Conv to, from toolInUse
   const capitalizedString = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -14,26 +14,23 @@ const BinaryCompliment = ({ toolInUse, methodForm }) => {
     2: "2's Compliment",
   };
   const convFrom = "binary";
-  const [convTo, setConvTo] = useState(methodForm.method);
+  const complimentPrefix = toolInUse.split("-to-")[1];
+  const [convTo, setConvTo] = useState(
+    complimentPrefix.split("-")[0].replace("s", "")
+  );
 
   const router = useRouter();
-  const changeQuery = (nextOperator) => {
-    const oldRoute = `./tools/${toolInUse}${
-      typeof operatorDict[methodForm.method] == "string"
-        ? `?method=${methodForm.method}`
-        : ""
-    }`;
-    const newRoute = `./tools/${toolInUse}?method=${nextOperator}`;
-    router.push(newRoute, oldRoute, {
-      shallow: true,
-    });
-  };
+
+  useEffect(() => {
+    const newRoute = `/tools/binary-to-${convTo}s-compliment`;
+    router.push(newRoute);
+  }, [convTo]);
 
   const converter = (str, method) => {
     if (str === "") return "";
     let resultValue;
     try {
-      resultValue = ConverterFuncs[toolInUse](str, method);
+      resultValue = ConverterFuncs["binary-compliment"](str, method);
     } catch (error) {
       console.log(error);
       resultValue = outputData;
@@ -64,7 +61,6 @@ const BinaryCompliment = ({ toolInUse, methodForm }) => {
           className="text-black py-1.5 px-2 rounded-md border-[2.5px] border-gray-400 cursor-pointer outline-none focus:border-[dodgerBlue]"
           value={convTo}
           onChange={(e) => {
-            changeQuery(e.target.value);
             setConvTo(e.target.value);
           }}
         >
@@ -105,7 +101,7 @@ const BinaryCompliment = ({ toolInUse, methodForm }) => {
             <button
               className="border-2 border-green-500 px-3 py-2 rounded-md text-sm hover:border-gray-300 active:bg-green-500 active:border-gray-200"
               onClick={() => {
-                setOutputData(converter(userInput, methodForm.method));
+                setOutputData(converter(userInput, convTo));
               }}
             >
               Convert

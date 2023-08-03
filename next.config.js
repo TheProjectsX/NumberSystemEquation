@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   // Add basePath
-  basePath: "/NumberSystemEquation",
+  // basePath: "/NumberSystemEquation",
 };
 
 module.exports = nextConfig;

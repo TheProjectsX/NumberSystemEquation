@@ -111,21 +111,21 @@ export const RoutesData = [
       [
         {
           title: "Binary Adder",
-          path: "./tools/binary-math?eqn=add",
+          path: "./tools/binary-add",
         },
         {
           title: "Binary Substracter",
-          path: "./tools/binary-math?eqn=sub",
+          path: "./tools/binary-sub",
         },
       ],
       [
         {
           title: "Binary Multiplier",
-          path: "./tools/binary-math?eqn=multi",
+          path: "./tools/binary-multi",
         },
         {
           title: "Binary Divider",
-          path: "./tools/binary-math?eqn=div",
+          path: "./tools/binary-div",
         },
       ],
     ],
@@ -136,11 +136,11 @@ export const RoutesData = [
       [
         {
           title: "Binary 1's Compliment",
-          path: "./tools/binary-to-compliment?method=1",
+          path: "./tools/binary-to-1s-compliment",
         },
         {
           title: "Binary 2's Compliment",
-          path: "./tools/binary-to-compliment?method=2",
+          path: "./tools/binary-to-2s-compliment",
         },
       ],
       [
